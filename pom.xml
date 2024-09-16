@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <artifactId>keycloak-2fa-email-authenticator</artifactId>
     <groupId>com.mesutpiskin.keycloak</groupId>
@@ -15,7 +15,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <lombok.version>1.18.34</lombok.version>
-        <keycloak.version>25.0.2</keycloak.version>
+        <keycloak.version>25.0.5</keycloak.version>
         <maven-jar.plugin.version>3.4.2</maven-jar.plugin.version>
     </properties>
 
@@ -62,7 +62,8 @@
                         <!-- This is required since we need to add the jboss module references
                             to the resulting jar -->
                         <manifestEntries>
-                            <!-- Adding explicit dependencies to avoid class-loading issues at runtime -->
+                            <!-- Adding explicit dependencies to avoid class-loading issues at
+                            runtime -->
                             <Dependencies>
                                 <![CDATA[org.keycloak.keycloak-common,org.keycloak.keycloak-core,org.keycloak.keycloak-server-spi,org.keycloak.keycloak-server-spi-private,org.apache.httpcomponents,org.keycloak.keycloak-services,org.jboss.logging,javax.api,javax.jms.api,javax.transaction.api,com.fasterxml.jackson.core.jackson-core,com.fasterxml.jackson.core.jackson-annotations,com.fasterxml.jackson.core.jackson-databind]]></Dependencies>
                         </manifestEntries>
