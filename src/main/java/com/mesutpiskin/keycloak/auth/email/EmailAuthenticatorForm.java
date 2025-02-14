@@ -71,7 +71,7 @@ public class EmailAuthenticatorForm extends AbstractUsernameFormAuthenticator {
         String code = SecretGenerator.getInstance().randomString(length, SecretGenerator.DIGITS);
         sendEmailWithCode(context.getSession(), context.getRealm(), context.getUser(), code, ttl);
         session.setAuthNote(EmailConstants.CODE, code);
-        session.setAuthNote(EmailConstants.CODE_TTL, Long.toString(System.currentTimeMillis() + (ttl * 1000L)));
+        session.setAuthNote(EmailConstants.CODE_TTL, Long.toString(System.currentTimeMillis() + (ttl * 60 * 1000L)));
     }
 
     @Override
